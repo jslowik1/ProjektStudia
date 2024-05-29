@@ -1,5 +1,5 @@
 import { Image, Text, View } from "react-native";
-import { przepisy } from "../styles/przepisy";
+import { przepisy } from "../assets/styles/przepisy";
 import { Component, ReactElement } from "react";
 
 const Przepis = (props: { title: string; image: string }): ReactElement => {

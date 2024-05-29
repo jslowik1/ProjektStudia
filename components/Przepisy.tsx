@@ -1,12 +1,14 @@
 import { ScrollView, View, Image } from "react-native";
 import { Text } from "react-native-paper";
-import { przepisy } from "../styles/przepisy";
+import { przepisy } from "../assets/styles/przepisy";
 import { Searchbar } from "react-native-paper";
 import { useEffect, useState } from "react";
+import { IPrzepis } from "../assets/types";
 import Przepis from "./Przepis";
+
 export const Przepisy = () => {
   const [searchQuery, setSearchQuery] = useState("");
-  const [przepisyLista, setPrzepisyLista] = useState<any[]>([
+  const [przepisyLista, setPrzepisyLista] = useState<IPrzepis[]>([
     {
       id: 1,
       title: "Owsianka",
@@ -23,15 +25,16 @@ export const Przepisy = () => {
       image: "https://imageplaceholder.net/600",
     },
   ]);
-  const [founditems, setFoundItems] = useState<any[]>([]);
+  const [founditems, setFoundItems] = useState<IPrzepis[]>([]);
+
   useEffect(() => {
-    if (searchQuery === "") return;
+    if (searchQuery === "") setFoundItems(przepisyLista);
     const founditems = przepisyLista.filter((przepis) =>
       przepis.title.toLowerCase().includes(searchQuery.toLowerCase())
     );
     setFoundItems(founditems);
   }, [searchQuery]);
-  console.log(founditems);
+
   return (
     <View style={przepisy.container}>
       <View style={przepisy.searchBox}>
@@ -43,8 +46,8 @@ export const Przepisy = () => {
         />
       </View>
       <ScrollView contentContainerStyle={przepisy.list}>
-        {searchQuery.length > 0 && founditems && founditems.length
-          ? founditems.map((przepis) => {
+        {searchQuery.length > 0
+          ? founditems.map((przepis: IPrzepis) => {
               return (
                 <Przepis
                   key={przepis.id}

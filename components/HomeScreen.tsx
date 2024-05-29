@@ -1,7 +1,7 @@
 import React from "react";
 import { Platform, StatusBar, Text, View } from "react-native";
 import { Button, ProgressBar } from "react-native-paper";
-import { main } from "../styles";
+import { main } from "../assets/styles";
 export function HomeScreen() {
   return (
     <View style={main.container}>
