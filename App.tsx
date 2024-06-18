@@ -1,8 +1,9 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { BottomNavigation } from "react-native-paper";
-import { HomeScreen, Przepisy, SettingsScreen, Cwiczenia } from "./components";
+import { HomeScreen, Przepisy, SettingsScreen, Exercises } from "./components";
 import { useState } from "react";
 import { SafeAreaProvider } from "react-native-safe-area-view";
+import {Exercise} from "./components/Exercises/Exercise";
 export default function App() {
   const Tab = createBottomTabNavigator();
   const [index, setIndex] = useState(0);
@@ -16,7 +17,7 @@ export default function App() {
     posilki: HomeScreen,
     przepisy: Przepisy,
     wiecej: SettingsScreen,
-    cwiczenia: Cwiczenia,
+    cwiczenia: Exercises,
   });
   return (
     <SafeAreaProvider>

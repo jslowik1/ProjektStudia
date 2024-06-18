@@ -19,7 +19,7 @@ export const cwiczenia = StyleSheet.create({
     display: "flex",
     width: Dimensions.get("window").width,
   },
-  przepis: {
+  cwiczenie: {
     backgroundColor: "#14FFB9",
     borderRadius: 10,
     margin: 10,

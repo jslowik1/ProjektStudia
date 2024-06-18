@@ -1,0 +1,169 @@
+{
+"przepisy": [
+  {
+    "id": 1,
+    "name": "Sałatka z grillowanym kurczakiem",
+    "preparation_time": "30 min",
+    "short_description": "Lekka sałatka z grillowanym kurczakiem, warzywami i sosem jogurtowym.",
+    "instructions": "Kurczaka pokrój w paski, przypraw solą, pieprzem i ziołami, a następnie grilluj. Warzywa (sałata, pomidory, ogórek, papryka) pokrój i wymieszaj z kurczakiem. Polej sosem jogurtowym z czosnkiem i ziołami.",
+    "kcal": 250,
+    "protein": 30,
+    "carbohydrates": 10,
+    "fat": 10
+  },
+  {
+    "id": 2,
+    "name": "Smoothie zielone",
+    "preparation_time": "10 min",
+    "short_description": "Orzeźwiający napój z jarmużu, szpinaku, banana i kiwi.",
+    "instructions": "Zblenduj jarmuż, szpinak, banana, kiwi i wodę. Podawaj schłodzone.",
+    "kcal": 150,
+    "protein": 3,
+    "carbohydrates": 30,
+    "fat": 2
+  },
+  {
+    "id": 3,
+    "name": "Owsianka z owocami",
+    "preparation_time": "15 min",
+    "short_description": "Pełnowartościowe śniadanie z owsianki i świeżych owoców.",
+    "instructions": "Płatki owsiane zalej mlekiem i gotuj do miękkości. Dodaj pokrojone owoce (np. truskawki, borówki, banan) i orzechy.",
+    "kcal": 300,
+    "protein": 10,
+    "carbohydrates": 50,
+    "fat": 8
+  },
+  {
+    "id": 4,
+    "name": "Zupa krem z brokułów",
+    "preparation_time": "30 min",
+    "short_description": "Kremowa zupa z brokułów z dodatkiem jogurtu naturalnego.",
+    "instructions": "Brokuły ugotuj w bulionie warzywnym, a następnie zmiksuj na gładki krem. Dodaj jogurt naturalny, dopraw solą i pieprzem.",
+    "kcal": 100,
+    "protein": 5,
+    "carbohydrates": 15,
+    "fat": 3
+  },
+  {
+    "id": 5,
+    "name": "Filet z łososia z warzywami",
+    "preparation_time": "25 min",
+    "short_description": "Łosoś pieczony z warzywami, podany z cytryną.",
+    "instructions": "Filet z łososia posyp solą, pieprzem i ziołami, piecz 20 minut w 180°C. Warzywa (np. brokuły, marchew) ugotuj na parze. Podawaj łososia z warzywami i plasterkami cytryny.",
+    "kcal": 300,
+    "protein": 25,
+    "carbohydrates": 10,
+    "fat": 15
+  },
+  {
+    "id": 6,
+    "name": "Jajecznica na szpinaku",
+    "preparation_time": "10 min",
+    "short_description": "Lekka jajecznica z dodatkiem świeżego szpinaku.",
+    "instructions": "Na patelni podsmaż szpinak, dodaj roztrzepane jajka, dopraw solą i pieprzem. Smaż do ścięcia jajek.",
+    "kcal": 200,
+    "protein": 12,
+    "carbohydrates": 2,
+    "fat": 15
+  },
+  {
+    "id": 7,
+    "name": "Sałatka z komosy ryżowej",
+    "preparation_time": "20 min",
+    "short_description": "Pożywna sałatka z komosy ryżowej, warzyw i fetą.",
+    "instructions": "Komosę ugotuj według instrukcji na opakowaniu. Warzywa (pomidory, ogórek, papryka) pokrój, wymieszaj z komosą i fetą. Polej oliwą z oliwek.",
+    "kcal": 250,
+    "protein": 8,
+    "carbohydrates": 30,
+    "fat": 10
+  },
+  {
+    "id": 8,
+    "name": "Kurczak curry z warzywami",
+    "preparation_time": "30 min",
+    "short_description": "Danie z kurczaka i warzyw w sosie curry.",
+    "instructions": "Kurczaka pokrój w kostkę, podsmaż. Dodaj pokrojone warzywa (papryka, cukinia, marchew) i przyprawy curry. Gotuj do miękkości. Podawaj z ryżem.",
+    "kcal": 350,
+    "protein": 30,
+    "carbohydrates": 40,
+    "fat": 10
+  },
+  {
+    "id": 9,
+    "name": "Tarta z warzywami",
+    "preparation_time": "60 min",
+    "short_description": "Pieczona tarta na pełnoziarnistym spodzie z warzywami.",
+    "instructions": "Ciasto pełnoziarniste wyłóż na formę do tarty. Warzywa (cukinia, papryka, brokuły) pokrój, wymieszaj z jajkami i serem feta. Wylej na ciasto, piecz 40 minut w 180°C.",
+    "kcal": 200,
+    "protein": 10,
+    "carbohydrates": 25,
+    "fat": 8
+  },
+  {
+    "id": 10,
+    "name": "Jogurt z owocami i orzechami",
+    "preparation_time": "5 min",
+    "short_description": "Lekki deser z jogurtu naturalnego, świeżych owoców i orzechów.",
+    "instructions": "Jogurt naturalny wymieszaj z pokrojonymi owocami (np. truskawki, banan, borówki) i posyp orzechami.",
+    "kcal": 180,
+    "protein": 8,
+    "carbohydrates": 25,
+    "fat": 6
+  },
+  {
+    "id": 11,
+    "name": "Pieczona pierś z indyka",
+    "preparation_time": "40 min",
+    "short_description": "Pieczona pierś z indyka z ziołami i cytryną.",
+    "instructions": "Pierś z indyka natrzyj solą, pieprzem, ziołami i sokiem z cytryny. Piecz 30-40 minut w 180°C. Podawaj z sałatką z warzyw.",
+    "kcal": 200,
+    "protein": 30,
+    "carbohydrates": 2,
+    "fat": 8
+  },
+  {
+    "id": 12,
+    "name": "Koktajl truskawkowy",
+    "preparation_time": "5 min",
+    "short_description": "Orzeźwiający koktajl z truskawek i jogurtu naturalnego.",
+    "instructions": "Zblenduj truskawki z jogurtem naturalnym i odrobiną miodu.",
+    "kcal": 100,
+    "protein": 5,
+    "carbohydrates": 18,
+    "fat": 2
+  },
+  {
+    "id": 13,
+    "name": "Frittata z warzywami",
+    "preparation_time": "20 min",
+    "short_description": "Pieczony omlet z warzywami.",
+    "instructions": "Warzywa (papryka, szpinak, pomidory) podsmaż na patelni. Wlej roztrzepane jajka, dopraw solą i pieprzem. Piecz w piekarniku 10 minut w 180°C.",
+    "kcal": 150,
+    "protein": 12,
+    "carbohydrates": 5,
+    "fat": 10
+  },
+  {
+    "id": 14,
+    "name": "Sałatka z tuńczykiem",
+    "preparation_time": "10 min",
+    "short_description": "Lekka sałatka z tuńczykiem, warzywami i oliwą.",
+    "instructions": "Tuńczyka z puszki wymieszaj z sałatą, pomidorami, ogórkiem i cebulą. Polej oliwą z oliwek i dopraw solą oraz pieprzem.",
+    "kcal": 220,
+    "protein": 20,
+    "carbohydrates": 8,
+    "fat": 12
+  },
+  {
+    "id": 15,
+    "name": "Placuszki z cukinii",
+    "preparation_time": "20 min",
+    "short_description": "Lekko smażone placuszki z tartej cukinii.",
+    "instructions": "Cukinię zetrzyj na tarce, odciśnij nadmiar wody. Dodaj jajko, mąkę pełnoziarnistą, sól i pieprz. Smaż na niewielkiej ilości oliwy na złoty kolor.",
+    "kcal": 180,
+    "protein": 6,
+    "carbohydrates": 15,
+    "fat": 8
+  }
+]
+}

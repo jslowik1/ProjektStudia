@@ -1,0 +1,109 @@
+{
+    "exercises" : [
+        {
+            "id": 1,
+            "category": "chest",
+            "name": "Wyciskanie sztangi na ławce poziomej",
+            "difficulty": "średni",
+            "instruction": "Połóż się na ławce z nogami płasko na podłodze. Złap sztangę i opuść ją do klatki piersiowej, następnie wypchnij ją z powrotem do góry."
+        },
+        {
+            "id": 2,
+            "category": "back",
+            "name": "Martwy ciąg",
+            "difficulty": "trudny",
+            "instruction": "Stań ze stopami na szerokość bioder. Złap sztangę i podnieś ją, prostując nogi i plecy."
+        },
+        {
+            "id": 3,
+            "category": "legs",
+            "name": "Przysiad",
+            "difficulty": "średni",
+            "instruction": "Stań ze stopami na szerokość barków. Obniż ciało, zginając kolana, trzymając plecy prosto, a następnie wróć do pozycji wyjściowej."
+        },
+        {
+            "id": 4,
+            "category": "bicep",
+            "name": "Uginanie ramion ze sztangą",
+            "difficulty": "łatwy",
+            "instruction": "Stań prosto, trzymając sztangę podchwytem. Zginaj ramiona, unosząc sztangę do wysokości barków, a następnie powoli opuszczaj."
+        },
+        {
+            "id": 5,
+            "category": "tricep",
+            "name": "Prostowanie ramion na wyciągu",
+            "difficulty": "średni",
+            "instruction": "Stań przed wyciągiem z uchwytem w rękach. Prostuj ramiona, wypychając uchwyt w dół, a następnie wróć do pozycji wyjściowej."
+        },
+        {
+            "id": 6,
+            "category": "shoulders",
+            "name": "Wyciskanie sztangi nad głowę",
+            "difficulty": "trudny",
+            "instruction": "Stań ze sztangą na wysokości ramion. Wypchnij sztangę nad głowę, prostując ramiona, a następnie powoli opuść."
+        },
+        {
+            "id": 7,
+            "category": "chest",
+            "name": "Rozpiętki na ławce poziomej",
+            "difficulty": "średni",
+            "instruction": "Połóż się na ławce z hantlami w dłoniach. Z ramionami lekko zgiętymi, rozłóż ramiona na boki, a następnie wróć do pozycji wyjściowej."
+        },
+        {
+            "id": 8,
+            "category": "back",
+            "name": "Wiosłowanie sztangą",
+            "difficulty": "średni",
+            "instruction": "Stań pochylony, trzymając sztangę nachwytem. Przyciągaj sztangę do brzucha, a następnie powoli opuszczaj."
+        },
+        {
+            "id": 9,
+            "category": "legs",
+            "name": "Wykroki",
+            "difficulty": "średni",
+            "instruction": "Stań prosto, zrób duży krok do przodu i obniż ciało, aż tylne kolano niemal dotknie podłogi. Wróć do pozycji wyjściowej i powtórz na drugą nogę."
+        },
+        {
+            "id": 10,
+            "category": "bicep",
+            "name": "Uginanie ramion z hantlami",
+            "difficulty": "łatwy",
+            "instruction": "Stań prosto, trzymając hantle w dłoniach. Zginaj ramiona, unosząc hantle do wysokości barków, a następnie powoli opuszczaj."
+        },
+        {
+            "id": 11,
+            "category": "tricep",
+            "name": "Francuskie wyciskanie",
+            "difficulty": "trudny",
+            "instruction": "Połóż się na ławce, trzymając sztangę nad głową. Zginaj ramiona, opuszczając sztangę w stronę czoła, a następnie wypychaj ją z powrotem."
+        },
+        {
+            "id": 12,
+            "category": "shoulders",
+            "name": "Unoszenie hantli bokiem",
+            "difficulty": "średni",
+            "instruction": "Stań prosto, trzymając hantle wzdłuż ciała. Unos ręce na boki, aż będą równoległe do podłogi, a następnie powoli opuszczaj."
+        },
+        {
+            "id": 13,
+            "category": "chest",
+            "name": "Pompki",
+            "difficulty": "łatwy",
+            "instruction": "Połóż się na podłodze, opierając się na dłoniach i palcach stóp. Zginaj ramiona, opuszczając ciało, a następnie wypychaj się z powrotem do góry."
+        },
+        {
+            "id": 14,
+            "category": "back",
+            "name": "Podciąganie na drążku",
+            "difficulty": "trudny",
+            "instruction": "Złap drążek nachwytem i podciągaj się, aż broda znajdzie się powyżej drążka, a następnie powoli opuszczaj ciało."
+        },
+        {
+            "id": 15,
+            "category": "legs",
+            "name": "Wspięcia na palce",
+            "difficulty": "łatwy",
+            "instruction": "Stań na krawędzi stopnia z piętami poza krawędzią. Unos się na palcach, a następnie powoli opuszczaj pięty."
+        }
+    ]
+}

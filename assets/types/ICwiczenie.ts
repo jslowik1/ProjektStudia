@@ -1,6 +1,7 @@
 export default interface ICwiczenie {
   id: number;
-  kategoria: string;
-  nazwa: string;
-  opis: string;
+  category: "chest" | "tricep" | "bicep" | "legs" | "back" | "shoulders";
+  name: string;
+  difficulty: string;
+  instruction: string;
 }

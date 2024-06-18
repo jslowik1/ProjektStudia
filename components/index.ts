@@ -1,4 +1,4 @@
 export * from "./HomeScreen";
 export * from "./SettingsScreen";
-export * from "./Przepisy";
-export * from "./Cwiczenia";
+export * from "./Recipes/Przepisy";
+export * from "./Exercises/Exercises";

@@ -1,39 +1,34 @@
 import { ScrollView, View, Image } from "react-native";
 import { Text } from "react-native-paper";
-import { przepisy } from "../assets/styles/przepisy";
+import { przepisy } from "../../assets/styles/przepisy";
 import { Searchbar } from "react-native-paper";
 import { useEffect, useState } from "react";
-import { IPrzepis } from "../assets/types";
+import { IPrzepis } from "../../assets/types";
+import * as przepisyListaJSON from "../../assets/data/recipes.json";
 import Przepis from "./Przepis";
 
 export const Przepisy = () => {
   const [searchQuery, setSearchQuery] = useState("");
-  const [przepisyLista, setPrzepisyLista] = useState<IPrzepis[]>([
-    {
-      id: 1,
-      title: "Owsianka",
-      image: "https://imageplaceholder.net/600",
-    },
-    {
-      id: 2,
-      title: "Owsianka",
-      image: "https://imageplaceholder.net/600",
-    },
-    {
-      id: 3,
-      title: "Gowno",
-      image: "https://imageplaceholder.net/600",
-    },
-  ]);
+  const [przepisyLista, setPrzepisyLista] = useState<IPrzepis[]>([]);
   const [founditems, setFoundItems] = useState<IPrzepis[]>([]);
 
   useEffect(() => {
     if (searchQuery === "") setFoundItems(przepisyLista);
-    const founditems = przepisyLista.filter((przepis) =>
-      przepis.title.toLowerCase().includes(searchQuery.toLowerCase())
-    );
-    setFoundItems(founditems);
+    if(przepisyLista.length > 0) {
+      const founditems = przepisyLista.filter((przepis) =>
+          przepis.name.toLowerCase().includes(searchQuery.toLowerCase())
+      );
+      setFoundItems(founditems);
+    }
   }, [searchQuery]);
+
+  useEffect(() => {
+    const string = JSON.stringify(przepisyListaJSON.przepisy);
+    const parsed = JSON.parse(string) as IPrzepis[];
+    parsed.sort((a,b) => a.name.localeCompare(b.name));
+    setPrzepisyLista(parsed);
+  },[])
+  
 
   return (
     <View style={przepisy.container}>
@@ -46,24 +41,22 @@ export const Przepisy = () => {
         />
       </View>
       <ScrollView contentContainerStyle={przepisy.list}>
-        {searchQuery.length > 0
-          ? founditems.map((przepis: IPrzepis) => {
+        {searchQuery.length > 0 && founditems
+          ? founditems?.map((przepis: IPrzepis) => {
               return (
                 <Przepis
                   key={przepis.id}
-                  title={przepis.title}
-                  image={przepis.image}
+                  przepis={przepis}
                 />
               );
             })
           : searchQuery.length > 0 && !founditems
           ? null
-          : przepisyLista.map((przepis) => {
+          : przepisyLista.length > 0 && przepisyLista?.map((przepis) => {
               return (
                 <Przepis
                   key={przepis.id}
-                  title={przepis.title}
-                  image={przepis.image}
+                  przepis={przepis}
                 />
               );
             })}
