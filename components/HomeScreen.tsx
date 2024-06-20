@@ -5,7 +5,10 @@ import storage from "./storage";
 import { Button, ProgressBar } from "react-native-paper";
 import { main } from "../assets/styles";
 import {Meal} from "../assets/types/Meal";
-import {ICwiczenie} from "../assets/types";
+import { userLimits } from "../assets/data/settings.json";
+import { useNavigation } from '@react-navigation/native';
+import { useFocusEffect } from '@react-navigation/native';
+import { useRoute } from "@react-navigation/native";
 import MealListItem from "./MealListItem";
 interface IStatsProps  {
     kcal: number;
@@ -16,7 +19,7 @@ interface IStatsProps  {
 
 export function HomeScreen() {
     const [modalVisible, setModalVisible] = React.useState<boolean>(false);
-
+    
     const [breakfast, setBreakfast] = React.useState<Meal[]>([]);
     const [breakfastStats, setBreakfastStats] = useState<IStatsProps>({kcal: 0, carbs: 0,protein: 0,fat: 0});
     const [dinner, setDinner] = React.useState<Meal[]>([]);
@@ -25,8 +28,23 @@ export function HomeScreen() {
     const [supperStats,setSupperStats] = React.useState<IStatsProps>({kcal: 0, carbs: 0, protein: 0, fat: 0});
     const [totalStats, setTotalStats] = React.useState<IStatsProps>({kcal: 0, carbs: 0, protein: 0, fat: 0});
     const [currentModal, setCurrentModal] = React.useState<"breakfast" | "dinner" | "supper" | "">("");
+    const [limits, setLimits] = React.useState<IStatsProps>({kcal: 2000, carbs: 200, protein: 200, fat: 45});
     const [currentMealName, setCurrentMealName] = React.useState("");
-
+    const route = useRoute();
+    console.log(route.params);
+    useEffect(() => {
+        const params2 = route.params as {kcal: number,carbs: number,protein: number,fat: number}
+         storage.save({
+        key: "limits",
+        data: {
+          kcal: params2.kcal,
+          carbs: params2.carbs,
+          protein: params2.protein,
+          fat: params2.fat
+        }
+      })
+      setLimits({kcal: params2.kcal,protein: params2.protein, fat: params2.fat, carbs: params2.carbs});
+    }, [route.params])
     const addMeal = (type: string, meal: Meal) => {
         switch (currentModal) {
             case "breakfast": {
@@ -69,7 +87,6 @@ export function HomeScreen() {
             }
         }
     }
-
     const {register,control, handleSubmit, setValue, formState: {errors}} = useForm<Meal>({
         defaultValues: {
             name: "",
@@ -103,10 +120,8 @@ export function HomeScreen() {
             .then(() => {
                 setModalVisible(false);
                 setCurrentMealName("");
-                console.log("Posiłek dodany");
             })
             .catch(() => {console.log("Błąd podczas dodawania posiłku")})
-        storage.load({key: "breakfast"}).then((res) => console.log(res));
     },[breakfast]);
 
     useEffect(() => {
@@ -119,10 +134,8 @@ export function HomeScreen() {
             .then(() => {
                 setModalVisible(false);
                 setCurrentMealName("");
-                console.log("Posiłek dodany");
             })
             .catch(() => {console.log("Błąd podczas dodawania posiłku")})
-        storage.load({key: "dinner"}).then((res) => console.log(res));
     },[dinner]);
 
     useEffect(() => {
@@ -135,14 +148,10 @@ export function HomeScreen() {
             .then(() => {
                 setModalVisible(false);
                 setCurrentMealName("");
-                console.log("Posiłek dodany");
             })
             .catch(() => {console.log("Błąd podczas dodawania posiłku")})
-        storage.load({key: "supper"}).then((res) => console.log(res));
     },[supper]);
 
-
-    console.log(breakfastStats);
 
   return (
     <ScrollView style={main.container}>
@@ -245,38 +254,38 @@ export function HomeScreen() {
         <View style={{ display: "flex", flexDirection: "column" }}>
           <Text style={{ color: "white" }}>Kalorie</Text>
           <ProgressBar
-            progress={totalStats.kcal/2000}
-            color={totalStats.kcal/2000 > 1 ? "red" : (totalStats.kcal/2000 > 0.80 && totalStats.kcal/2000 < 1) ? "orange": (totalStats.kcal/2000 === 1 ? "green" : "white")}
+            progress={totalStats.kcal/limits.kcal}
+            color={totalStats.kcal/limits.kcal > 1 ? "red" : (totalStats.kcal/limits.kcal > 0.80 && totalStats.kcal/limits.kcal < 1) ? "orange": (totalStats.kcal/limits.kcal === 1 ? "green" : "white")}
             style={{ backgroundColor: "grey" }}
           />
-          <Text style={{ color: "white" }}>{totalStats.kcal}/2000kcal</Text>
+          <Text style={{ color: "white" }}>{totalStats.kcal}/{limits?.kcal}kcal</Text>
         </View>
         <View>
           <Text style={{ color: "white" }}>Węglowodany</Text>
           <ProgressBar
-            progress={totalStats.carbs/200}
-            color={totalStats.carbs/200 > 1 ? "red" : (totalStats.carbs/200 > 0.80 && totalStats.carbs/200 < 1) ? "orange": (totalStats.carbs/200 === 1 ? "green" : "white")}
+            progress={totalStats.carbs/limits.carbs}
+            color={totalStats.carbs/limits.carbs > 1 ? "red" : (totalStats.carbs/limits.carbs > 0.80 && totalStats.carbs/limits.carbs < 1) ? "orange": (totalStats.carbs/limits.carbs === 1 ? "green" : "white")}
             style={{ backgroundColor: "grey" }}
           />
-          <Text style={{ color: "white" }}>{totalStats.carbs}/200g</Text>
+          <Text style={{ color: "white" }}>{totalStats.carbs}/{limits.carbs}g</Text>
         </View>
         <View>
           <Text style={{ color: "white" }}>Białko</Text>
           <ProgressBar
-            progress={totalStats.protein/150}
-            color={totalStats.protein/150 > 1 ? "red" : (totalStats.protein/150 > 0.80 && totalStats.protein/150 < 1) ? "orange": (totalStats.protein/150 === 1 ? "green" : "white")}
+            progress={totalStats.protein/limits.protein}
+            color={totalStats.protein/limits.protein > 1 ? "red" : (totalStats.protein/limits.protein > 0.80 && totalStats.protein/limits.protein < 1) ? "orange": (totalStats.protein/limits.protein === 1 ? "green" : "white")}
             style={{ backgroundColor: "grey" }}
           />
-          <Text style={{ color: "white" }}>{totalStats.protein}/150g</Text>
+          <Text style={{ color: "white" }}>{totalStats.protein}/{limits.protein}g</Text>
         </View>
         <View>
           <Text style={{ color: "white" }}>Tłuszcz</Text>
           <ProgressBar
-            progress={totalStats.fat/75}
-            color={totalStats.fat/75 > 1 ? "red" : (totalStats.fat/75 > 0.80 && totalStats.fat/75 < 1) ? "orange": (totalStats.fat/75 === 1 ? "green" : "white")}
+            progress={totalStats.fat/limits.fat}
+            color={totalStats.fat/limits.fat > 1 ? "red" : (totalStats.fat/limits.fat > 0.80 && totalStats.fat/limits.fat < 1) ? "orange": (totalStats.fat/limits.fat === 1 ? "green" : "white")}
             style={{ backgroundColor: "grey" }}
           />
-          <Text style={{ color: "white" }}>{totalStats.fat}/75g</Text>
+          <Text style={{ color: "white" }}>{totalStats.fat}/{limits.fat}g</Text>
         </View>
       </View>
       <View
