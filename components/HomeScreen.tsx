@@ -17,6 +17,13 @@ interface IStatsProps  {
     fat: number;
 }
 
+const MealsStrings = {
+    "breakfast": "Śniadanie",
+    "dinner": "Obiad",
+    "supper": "Kolacja",
+    "": ""
+}
+
 export function HomeScreen() {
     const [modalVisible, setModalVisible] = React.useState<boolean>(false);
     
@@ -31,19 +38,21 @@ export function HomeScreen() {
     const [limits, setLimits] = React.useState<IStatsProps>({kcal: 2000, carbs: 200, protein: 200, fat: 45});
     const [currentMealName, setCurrentMealName] = React.useState("");
     const route = useRoute();
-    console.log(route.params);
+
     useEffect(() => {
-        const params2 = route.params as {kcal: number,carbs: number,protein: number,fat: number}
-         storage.save({
-        key: "limits",
-        data: {
+        if(route.params){
+            const params2 = route.params as {kcal: number,carbs: number,protein: number,fat: number}
+          storage.save({
+          key: "limits",
+          data: {
           kcal: params2.kcal,
           carbs: params2.carbs,
           protein: params2.protein,
           fat: params2.fat
         }
       })
-      setLimits({kcal: params2.kcal,protein: params2.protein, fat: params2.fat, carbs: params2.carbs});
+      setLimits({kcal: params2.kcal ,protein: params2.protein, fat: params2.fat, carbs: params2.carbs});
+        }
     }, [route.params])
     const addMeal = (type: string, meal: Meal) => {
         switch (currentModal) {
@@ -169,13 +178,14 @@ export function HomeScreen() {
                 padding: 30,
                 alignItems: 'center',
             }}>
-                <Text style={{color: "white"}}>Dodajesz posiłek do: {currentModal}</Text>
+                <Text style={{color: "white"}}>Dodajesz posiłek do: {MealsStrings[currentModal]}</Text>
                 <Controller control={control} rules={{required: true}} render={({field: {onChange, onBlur, value}}) => (
                     <TextInput
                         style={{padding: 5, borderWidth: 2, width: "75%", textAlign: "center", borderRadius: 13, margin: 3,color: "white", borderColor: "white"}}
                         placeholder="Nazwa"
                         onBlur={onBlur}
                         onChangeText={onChange}
+                        placeholderTextColor="white"
                     />
                 )} name="name"/>
                 <View style={{display: "flex", flexDirection: "column", justifyContent: "space-between", width: "100%"}}>
@@ -188,6 +198,7 @@ export function HomeScreen() {
                                 onBlur={onBlur}
                                 onChangeText={onChange}
                                 keyboardType="numeric"
+                                placeholderTextColor="white"
                             ></TextInput>
                         </View>
                     )} name="kcal"/>
@@ -200,6 +211,7 @@ export function HomeScreen() {
                                 onBlur={onBlur}
                                 onChangeText={onChange}
                                 keyboardType="numeric"
+                                placeholderTextColor="white"
                             />
                         </View>
                     )} name="carbs"/>
@@ -212,6 +224,7 @@ export function HomeScreen() {
                             onBlur={onBlur}
                             onChangeText={onChange}
                             keyboardType="numeric"
+                            placeholderTextColor="white"
                         />
                         </View>
                     )} name="protein"/>
@@ -224,6 +237,7 @@ export function HomeScreen() {
                                 onBlur={onBlur}
                                 onChangeText={onChange}
                                 keyboardType="numeric"
+                                placeholderTextColor="white"
                             />
                         </View>
                     )} name="fat"/>
@@ -235,8 +249,12 @@ export function HomeScreen() {
                     width: "100%",
                     justifyContent: "space-evenly"
                 }}>
-                    <Button onPress={() => setModalVisible(!modalVisible)}>Anuluj</Button>
-                    <Button onPress={onSubmit}>Dodaj posiłek</Button>
+                    <Button style={{
+                              backgroundColor: "#FF6F6F",
+                          }} onPress={() => setModalVisible(!modalVisible)}><Text style={{color: "white"}}>Anuluj</Text></Button>
+                    <Button style={{
+                              backgroundColor: "#FF6F6F",
+                          }} onPress={onSubmit}><Text style={{color: "white"}}>Dodaj posiłek</Text></Button>
                 </View>
 
             </View>

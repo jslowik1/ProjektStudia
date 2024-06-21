@@ -13,19 +13,6 @@ export const SettingsScreen = () => {
   const navigation = useNavigation();
   const handleSubmit = (): void => {
       navigation.navigate("posilki", {kcal: kcal, carbs: carbs, protein: protein, fat: fat})
-      // storage.save({
-      //   key: "limits",
-      //   data: {
-      //     kcal: kcal,
-      //     carbs: carbs,
-      //     protein: protein,
-      //     fat: fat
-      //   }
-      // }).then(() => {
-      //   console.log("zmieniono limity");
-      // }).catch(err => {
-      //   console.log(err)
-      // })
   } 
 
   useEffect(() => {
