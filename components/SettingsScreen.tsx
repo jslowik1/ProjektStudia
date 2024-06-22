@@ -46,7 +46,7 @@ export const SettingsScreen = () => {
             <TextInput style={{borderBottomWidth: 2, textAlign: "center"}} onChangeText={(e) => {{if(e === ""){setFat(0)}else{setFat(parseInt(e))}}}} defaultValue="0" value={fat.toString()} keyboardType="numeric"/>
             </View>
         </View>
-        <Button style={{padding: 5, backgroundColor: "black", borderRadius: 0}}><Text style={{color: "white"}} onPress={() => handleSubmit()}>Zmień limity</Text></Button>
+        <Button onPress={() => handleSubmit()} style={{padding: 5, backgroundColor: "black", borderRadius: 0}}><Text style={{color: "white"}}>Zmień limity</Text></Button>
       </View>
     </View>
   );
